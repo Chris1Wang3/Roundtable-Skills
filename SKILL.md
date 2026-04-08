@@ -5,7 +5,6 @@ description: >-
   Outputs professional, execution-oriented HTML reports for decision meetings.
   产品经理通用技能合集：竞品调研 + 需求评审模拟。
   输出可直接用于评审会的 HTML 报告。
-version: 1.1.0
 ---
 
 # Jiaye-Skills
