@@ -1,5 +1,5 @@
 ---
-name: jiaye-skills
+name: roundtable-skills
 description: >-
   AI agent skill collection: OPC Board (one-person company feasibility stress-test),
   competitive product research, and PRD review simulation. All output professional,
@@ -8,7 +8,7 @@ description: >-
   均输出专业、面向执行的报告。
 ---
 
-# Jiaye-Skills
+# Roundtable-Skills
 
 本目录是 AI 技能合集，当前包含 3 个子技能：
 

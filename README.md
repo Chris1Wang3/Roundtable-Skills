@@ -1,4 +1,4 @@
-# Jiaye-Skills
+# Roundtable-Skills
 
 > AI agent skill collection — OPC Board (one-person company feasibility stress-test), competitive product research, and PRD review simulation. All with professional report outputs.
 
@@ -32,7 +32,7 @@ openclaw skills install competitive-product-research
 openclaw skills install pm-requirement-review-simulator
 ```
 
-> **Note:** Do not install third-party CLIs or agent skills into this repo directory. Use global/user paths or a separate folder outside `Jiaye-Skills`.
+> **Note:** Do not install third-party CLIs or agent skills into this repo directory. Use global/user paths or a separate folder outside `Roundtable-Skills`.
 
 ---
 
