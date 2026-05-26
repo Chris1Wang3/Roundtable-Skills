@@ -145,17 +145,20 @@ version: 1.3.1
 
 ### Layer D · 决策输出（HTML）
 
-使用 `references/report-template.html`，默认分区：
+使用 `references/report-template.html`，默认分区（顺序不可打乱）：
 
-1. 封面
-2. 摘要
-3. 范围与来源
-4. 对标总览
-5. 战略诊断（启用时）
-6. 关键发现
-7. 可复用 Pattern（可选）
-8. 落地建议
-9. 来源索引
+1. Hero（调研目标、一句话结论、结论标签）
+2. Stats Row（产品数 / 发现数 / Pattern 数 / 行动项数）
+3. Callouts（Top Insight / Priority Action）
+4. Research Scope + Source Coverage
+5. Summary Conclusions
+6. Competitive Benchmark Table（场景 × 产品 × 维度对标）
+7. Strategic Analysis（SWOT + 波特五力 + PESTLE，启用时）
+8. Key Findings
+9. Reusable Patterns（可选）
+10. Implementation Roadmap
+11. Source Index
+12. Disclaimer
 
 ## 7) 建议表达规范（禁止空话）
 

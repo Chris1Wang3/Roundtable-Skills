@@ -1,2 +1,13 @@
-# Nested Lark CLI checkout (larksuite/cli) kept locally; not part of this repo
+# --- Toolchain / CLI artifacts (install globally, not in this repo) ---
 /cli/
+.agents/
+skills-lock.json
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# OS & editor
+.DS_Store
+Thumbs.db
+*.log

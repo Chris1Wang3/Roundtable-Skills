@@ -21,6 +21,11 @@ version: 1.0.0
 - 需要会议可执行资产：脚本、分工表、决策闸门、风险预案
 - 想看看自己的 PRD 能在"地狱模式"活几分钟（情绪价值）
 
+## 不适合
+- 从零撰写 PRD（这是压测器，不是写作工具）
+- 已上线产品的全面复盘（支持局部迭代评审，不做系统性事后诊断）
+- 替你做最终决策（给 Go / Conditional Go / No Go 建议，拍板仍由你）
+
 ---
 
 ## 输入层
@@ -88,62 +93,23 @@ version: 1.0.0
 
 ## 处理层
 
-### 第一步：信息采集与确认
-- 提取已有信息，推断可推断项，输出「信息采集清单」
-- 用户确认/跳过后，整理最终信息并标注推断项
+按顺序执行，详细规则见各 references 文件，不在此重复：
 
-### 第一步半：识别需求类型，加载对应评审标准
+1. **信息采集与确认** — 提取已有信息，推断可推断项，输出采集清单；用户确认/跳过后整理最终信息
+2. **需求类型识别** — 判断类型，加载对应权重（五维基准均 20%，按类型调整）；维度可判 N/A，`逻辑自洽` 永不 N/A；详见 scoring-engine-deterministic.md
+3. **PRD 来源校准** — 📄 自有：严格标准；🌐 展示版：12 个豁免子项强制 2 分，禁止追问必然缺失的内部信息；详见 scoring-engine-deterministic.md
+4. **加载角色人设** — 按残酷度调整五大角色语气/问题数/黑话浓度/预设立场；详见 review-playbook.md Part I
 
-判断需求类型并加载对应权重和评审标准。详细的识别表、权重调整表、维度 N/A 裁剪规则见 [references/scoring-engine-deterministic.md](references/scoring-engine-deterministic.md)。
+   | 残酷度 | 语气 | 每角色问题数 | 预设立场 |
+   |--------|------|------------|---------|
+   | 🟢 新手村 | 温和鼓励 | 5–8 | 基本支持 |
+   | 🟡 实战 | 专业直接 | 10–12 | 中立审视 |
+   | 🔴 地狱 | 尖锐带刺 | 12–15 | 默认反对 |
 
-关键规则：
-- 五维基准权重均 20%，根据需求类型调整（如工具类：技术 30%、运营 10%）
-- 维度可判定 N/A，裁剪后归一化；`逻辑自洽`永不 N/A，最少保留 3 个维度
-- 工具类内部需求：运营价值/老板满意默认 N/A（除非有明确外部目标）
-
-### 第一步3/4：PRD 来源模式校准
-
-判断 PRD 来源（📄 自有 / 🌐 展示版），加载对应评分基准。详细规则、展示版子项评分指令和硬校验规则见 [references/scoring-engine-deterministic.md](references/scoring-engine-deterministic.md)。
-
-关键规则：
-- 📄 自有：严格标准，缺失信息给保守分 6 分
-- 🌐 展示版：12 个🏷️豁免子项强制 2 分，聚焦已展示内容质量
-- 结构完整的展示版 PRD 应达 S 级（85+）
-
-### 第二步：加载角色人设
-
-阅读 [references/review-playbook.md](references/review-playbook.md) Part I 获取五大角色的性格人设、口头禅、分析维度，根据残酷度调整：
-
-| 维度 | 🟢 新手村 | 🟡 实战 | 🔴 地狱 |
-|------|----------|--------|--------|
-| 语气 | 温和鼓励 | 专业直接 | 尖锐带刺 |
-| 问题数量 | 每角色 5-8 个 | 每角色 10-12 个 | 每角色 12-15 个 |
-| 问题难度 | 指出明显漏洞 | 专业深挖 | 刁钻极端 |
-| 黑话浓度 | 无 | 少量 | 大量 |
-| 冲突强度 | 基本不冲突 | 正常博弈 | 多方对立 |
-| 预设立场 | 基本支持 | 中立审视 | 默认反对 |
-
-### 第三步：逐角色攻防推演
-
-按五个角色依次推演（技术负责人、运营总监、设计主管、老板/决策者、法务顾问），每角色输出：质疑问题 + 背后真实关切 + 严重等级（致命/重要/一般）。
-
-先执行**维度-问题联动收敛**：若某维度为 N/A，对应问题簇必须降权或移除。联动映射表见 [references/review-playbook.md](references/review-playbook.md)。展示版 PRD 禁止追问必然缺失的内部信息。
-
-### 第四步：跨部门协作推演
-- 识别依赖关系（交付物和最晚交付节点）
-- 识别冲突关系（目标/指标/资源/节奏冲突）
-- 生成 RACI 分工矩阵和协作断点标注
-
-### 第五步：决策推演
-- 构建 A/B/C 三方案（完整/降级/MVP）
-- 四闸门判定（价值/风险/资源/战略）
-- 输出结论：**Go** / **Conditional Go** / **No Go**
-- 设定回看节点：T+7 行为指标，T+30 ROI 与留存
-
-### 第六步：生成应对话术与神回复
-- 阅读 [references/review-playbook.md](references/review-playbook.md) Part II 获取话术框架
-- 为致命/重要级质疑生成话术：`[认同关切] + [数据支撑] + [逻辑推演] + [备选方案]`
-- 挑出最难回答的 3 个问题生成"职场神回复"
+5. **逐角色攻防推演** — 五角色依次输出：质疑 + 真实关切 + 严重等级；N/A 维度对应问题簇降权或移除
+6. **跨部门协作推演** — 识别依赖/冲突关系，生成 RACI 矩阵；详见 review-playbook.md
+7. **决策推演** — A/B/C 三方案 + 四闸门判定 → Go / Conditional Go / No Go + T+7/T+30 回看节点
+8. **应对话术** — 为致命/重要级质疑生成 `[认同关切]+[数据支撑]+[逻辑推演]+[备选方案]`；挑 3 题生成"神回复"；详见 review-playbook.md Part II
 
 ---
 
@@ -204,7 +170,7 @@ version: 1.0.0
 
 ### 输出格式规范
 
-**默认输出 HTML 报告**，严格按照 [references/report-template-pro.html](references/report-template-pro.html) 的结构和样式生成。报告 9 大分区：顶部信息条 → 存活率评分卡 → 决策闸门 → 五角色质疑 → 神回复 TOP3 → 协作包 → 会议脚本 → 优化建议 → 行动清单。
+**默认输出 HTML 报告**，严格按照 [references/report-template-pro.html](references/report-template-pro.html) 的结构和样式生成。报告 11 大分区（顺序不可打乱）：Hero → Radial Hub（仪表盘 + 雷达图）→ Callouts（Fatal Flaw / Lifeline）→ Decision Gates + A/B/C Plans → Five-Role Challenge Board → Killer Replies TOP 3 → Cross-Team Collaboration（RACI + 冲突化解）→ Review Meeting Script → Optimization Suggestions → Action Checklist → Disclaimer。
 
 **输出格式锁（强制）**：
 - 分区数量、分区顺序、分区标题保持与模板一致，禁止新增/删减/重排
@@ -212,7 +178,7 @@ version: 1.0.0
 - 评分卡必须包含：五维得分、综合存活率、评级、致命死穴、救命稻草
 - 决策闸门必须包含：价值/风险/资源/战略四闸门与最终结论
 
-**UI 风格**：深色背景(#0b0d10) + 卡片化布局 + 高对比状态色(绿/黄/红)
+**UI 风格**：浅蓝渐变 Hero（且慢色调）+ 白色卡片 + SVG 仪表盘/雷达图，与 opc-board 共享同一设计语言
 
 **评分明细展示**：每维度 KPI 卡片可展开子项明细，展示版豁免子项标记 `🏷️展示版豁免`，底部显示一致性校验结果。
 
@@ -232,12 +198,14 @@ version: 1.0.0
 
 ---
 
-## 资源索引
+## 参考文件
 
-- [references/scoring-engine-deterministic.md](references/scoring-engine-deterministic.md)：确定性评分引擎（子项检查清单评分法、权重归一化、JSON 输出规范）
-- [references/review-playbook.md](references/review-playbook.md)：评审攻防手册（Part I 角色分析框架 + Part II 应对话术与会议脚本）
-- [references/report-template-pro.html](references/report-template-pro.html)：专业 HTML 报告模板（三主题 + 完整 9 大分区）
-- [user_templates.md](user_templates.md)：用户可直接使用的场景模板（通用/电商/B2B/金融）
+| 文件 | 内容 |
+|------|------|
+| [references/scoring-engine-deterministic.md](references/scoring-engine-deterministic.md) | 确定性评分引擎（子项清单、权重归一化、展示版豁免、硬校验规则） |
+| [references/review-playbook.md](references/review-playbook.md) | 评审攻防手册（Part I 角色人设 + Part II 话术与会议脚本） |
+| [references/report-template-pro.html](references/report-template-pro.html) | 专业 HTML 报告模板（浅蓝 Hero 风格，11 大分区） |
+| [references/user_templates.md](references/user_templates.md) | 用户输入模板（通用/电商/B2B/金融 + 展示版快捷句） |
 
 ---
 
@@ -264,23 +232,9 @@ version: 1.0.0
 
 ## 快速启动
 
-优先使用 [user_templates.md](user_templates.md) 作为输入模板单一来源（通用骨架 + 行业增量块 + 展示版快捷句）。
+优先使用 [references/user_templates.md](references/user_templates.md) 作为输入模板单一来源（通用骨架 + 行业增量块 + 展示版快捷句）。
 
 - 一句话启动（推荐）：`帮我评审一下我们要做的拼团功能，实战模式`
 - 详细启动：按 `user_templates.md` 复制模板填写后提交
 - 展示版 PRD：直接使用其中的「展示版 PRD 通用快捷模板」
-
----
-
-## 自测用例概览
-
-| 用例 | 场景 | 核心通过标准 |
-|------|------|------------|
-| A 标准实战 | 完整信息 + 🟡 实战 | 四件套完整，每角色 10-12 题，有决策结论 |
-| B 地狱压测 | 资源紧+合规敏感 + 🔴 | 每角色 12-15 题+黑话，≥3 个跨部门冲突 |
-| C 最小输入 | 仅一句话 | 先出采集清单，"跳过"后基于推断生成完整报告 |
-| D 维度裁剪 | 内部工具类需求 | 运营/老板 N/A，归一化计算，质疑联动收敛 |
-| E 展示版校准 | 公开 PRD URL | 自动识别展示版，12 个豁免子项=2，结构完整→85+ |
-
-**失败判定**：漏模块 / 无决策结论 / 地狱模式过温和 / N/A 维度仍高频追问 / 展示版豁免子项<2 / 展示版一致性校验下调
 

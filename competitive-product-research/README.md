@@ -1,8 +1,10 @@
-# Competitive Product Research（竞品调研专家）
+# Competitive Product Research
+
+[中文版](README-zh.md)
 
 > Original dual-track method for competitive research: experience benchmarking + strategic diagnostics. Produces source-traceable, execution-oriented HTML reports.
 
-## What this skill is optimized for
+## What This Skill Is Optimized For
 
 - Turning competitor observations into **decision-ready actions**
 - Keeping conclusions **traceable to evidence**
@@ -13,8 +15,8 @@
 1. Scope alignment (confirm before run)
 2. Evidence indexing (`SRC-xxx`)
 3. Dual-track analysis
-  - Experience benchmarking (8 dimensions)
-  - Strategic diagnostics (optional: landscape, SWOT, Five Forces, PESTLE)
+   - Experience benchmarking (8 dimensions)
+   - Strategic diagnostics (optional: landscape, SWOT, Five Forces, PESTLE)
 4. HTML report generation
 
 ## Output Sections
@@ -39,8 +41,9 @@
 ## Quick Start
 
 ```text
-我们APP发帖转化率仅3%，请对标小红书和Instagram，分析发帖首链路问题。
-我方现状：右上角入口+空白编辑器+无自动草稿。
+Our app's posting conversion rate is only 3%. Benchmark against Xiaohongshu and Instagram,
+analyze first-posting funnel issues.
+Current state: top-right entry + blank editor + no auto-draft.
 ```
 
 ## Core Files
@@ -50,3 +53,10 @@
 - `references/report-template.html` — output template
 - `references/factual-reporting-and-style.md` — fact and style constraints
 
+## Install
+
+```bash
+openclaw skills install competitive-product-research
+```
+
+License: MIT
