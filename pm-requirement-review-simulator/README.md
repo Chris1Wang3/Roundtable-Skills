@@ -1,4 +1,4 @@
-# PRD Review Simulator
+# PM Requirement Review Simulator
 
 [中文版](README-zh.md)
 
@@ -6,7 +6,7 @@
 
 ## What It Does
 
-Describe your product requirement and choose a difficulty level. The agent simulates a **cross-functional review meeting** where 5 roles — Engineering, Operations, Design, Executive, and Legal — each challenge your PRD with role-specific concerns and speaking styles. It then generates a **light-blue themed HTML report** (Qieman-style hero + white cards + SVG gauge & radar) with:
+Describe your product requirement and choose a difficulty level. The agent simulates a **cross-functional review meeting** where 5 roles — Engineering, Operations, Design, Executive, and Legal — each challenge your PRD with role-specific concerns and speaking styles. It then generates a **light-blue themed HTML report** (light-blue hero + white cards + SVG gauge & radar) with:
 
 - **Survival Score** — deterministic scoring engine (per-item 0/1/2 weighted formula), not vibes
 - **5-Dimension Radar Chart** — visual breakdown of strengths and fatal weaknesses
@@ -40,7 +40,7 @@ Submit requirement → Info collection checklist → 5-role challenge + scoring 
 
 1. **Input**: identify requirement type (major feature / tool / MVP / iteration / compliance) + PRD source
 2. **Processing**: 5 roles challenge by persona, per-item scoring, weight normalization, survival rate
-3. **Output**: generate 11-section HTML report (light-blue Qieman-style theme)
+3. **Output**: generate 11-section HTML report (light-blue theme)
 
 ## Report Sections
 

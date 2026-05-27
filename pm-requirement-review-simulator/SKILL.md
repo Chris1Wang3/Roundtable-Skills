@@ -1,12 +1,12 @@
 ---
-name: requirement-review-simulator
+name: pm-requirement-review-simulator
 description: >-
   PRD review stress-test simulator: 5 cross-functional roles challenge your requirements
   across 3 difficulty levels, outputs a scored HTML survival report with radar chart and meeting script.
   当用户需要评审产品需求文档(PRD)、模拟需求评审会议、或预演跨部门博弈时使用。以需求评审攻防推演为核心，模拟技术/运营/设计/老板/法务五方挑战；具备"新手/实战/地狱"三级残酷度；输出质疑清单、应对话术、存活率评分卡和标准会议资产。
 ---
 
-# 产品经理需求评审模拟器
+# PM 需求评审模拟器
 
 ## 核心价值定位
 - **不是文档生成工具，而是评审前的攻防推演模拟器**
@@ -177,7 +177,7 @@ description: >-
 - 评分卡必须包含：五维得分、综合存活率、评级、致命死穴、救命稻草
 - 决策闸门必须包含：价值/风险/资源/战略四闸门与最终结论
 
-**UI 风格**：浅蓝渐变 Hero（且慢色调）+ 白色卡片 + SVG 仪表盘/雷达图，与 opc-board 共享同一设计语言
+**UI 风格**：浅蓝渐变 Hero + 白色卡片 + SVG 仪表盘/雷达图，与 opc-board 共享同一设计语言
 
 **评分明细展示**：每维度 KPI 卡片可展开子项明细，展示版豁免子项标记 `🏷️展示版豁免`，底部显示一致性校验结果。
 

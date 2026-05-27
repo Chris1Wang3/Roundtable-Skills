@@ -4,7 +4,7 @@ description: >-
   AI agent skill collection: OPC Board (one-person company feasibility stress-test),
   competitive product research, and PRD review simulation. All output professional,
   execution-oriented reports (Markdown + HTML).
-  AI 技能合集：一人董事会（一人公司可行性压测）、竞品调研、需求评审模拟。
+  AI 技能合集：一人董事会（一人公司可行性压测）、竞品调研、PM 需求评审模拟。
   均输出专业、面向执行的报告。
 ---
 
@@ -14,7 +14,7 @@ description: >-
 
 1. `opc-board/`（一人董事会）
 2. `competitive-product-research/`（竞品调研）
-3. `requirement-review-simulator/`（需求评审模拟器）
+3. `pm-requirement-review-simulator/`（PM 需求评审模拟器）
 
 ## 技能列表
 
@@ -22,7 +22,7 @@ description: >-
 |---|---|---|
 | 一人董事会 | `opc-board/` | 5 位专业顾问五维压测一人公司想法，输出带评分的专业评估报告 + Go/No-Go 决策 |
 | 竞品调研 | `competitive-product-research/` | 双轨分析（体验对标 + 战略诊断），输出竞品调研 HTML 报告 |
-| 需求评审模拟器 | `requirement-review-simulator/` | 五方攻防推演、确定性评分，输出需求评审 HTML 报告 |
+| PM 需求评审模拟器 | `pm-requirement-review-simulator/` | 五方攻防推演、确定性评分，输出需求评审 HTML 报告 |
 
 ## 最短启动
 

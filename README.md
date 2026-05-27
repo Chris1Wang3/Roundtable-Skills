@@ -8,7 +8,7 @@
 |---|---|---|
 | **OPC Board** | `opc-board/` | 5 professional advisors stress-test solo business ideas across 5 dimensions, scored feasibility report with Go/No-Go decision |
 | **Competitive Product Research** | `competitive-product-research/` | Dual-track competitive analysis (experience benchmarking + strategic diagnostics), source-traceable HTML report |
-| **PRD Review Simulator** | `requirement-review-simulator/` | 5-role cross-functional stress-test, deterministic survival scoring, meeting-ready HTML report |
+| **PM Requirement Review Simulator** | `pm-requirement-review-simulator/` | 5-role cross-functional stress-test, deterministic survival scoring, meeting-ready HTML report |
 
 ## Quick Start
 
@@ -46,7 +46,7 @@ openclaw skills install pm-requirement-review-simulator
 |---|---|---|
 | **一人董事会** | `opc-board/` | 5 位专业顾问五维压测想法可行性，输出带评分的专业评估报告 + Go/No-Go 决策 |
 | **竞品调研** | `competitive-product-research/` | 双轨分析（体验对标 + 战略诊断），证据可追溯，输出动作清单 |
-| **需求评审模拟器** | `requirement-review-simulator/` | 五方攻防推演、确定性评分、会议资产输出 |
+| **PM 需求评审模拟器** | `pm-requirement-review-simulator/` | 五方攻防推演、确定性评分、会议资产输出 |
 
 ## 快速启动
 
