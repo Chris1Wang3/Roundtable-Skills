@@ -34,8 +34,35 @@ The agent will output an **info collection checklist** first (goal, scope, const
 
 ## Workflow
 
-```
-Submit requirement → Info collection checklist → 5-role challenge + scoring → HTML report
+```mermaid
+flowchart TD
+    A["📝 Submit Requirement"] --> B["📋 Info Collection Checklist"]
+    B --> C{"User Confirms / Skips"}
+    C --> D["🔍 Identify Type + PRD Source"]
+    D --> E["🎭 5-Role Challenge"]
+
+    E --> E1["🛠️ Engineering"]
+    E --> E2["📈 Operations"]
+    E --> E3["🎨 Design"]
+    E --> E4["👔 Executive"]
+    E --> E5["⚖️ Legal"]
+
+    E1 --> F["⚙️ Scoring Engine"]
+    E2 --> F
+    E3 --> F
+    E4 --> F
+    E5 --> F
+
+    F --> G["25 Items × 0/1/2"]
+    G --> H["Weighted → Survival Rate"]
+    H --> I{"Decision Gates"}
+    I -->|Pass| J["✅ Go"]
+    I -->|Conditional| K["⚠️ Conditional Go"]
+    I -->|Fail| L["❌ No Go"]
+
+    J --> M["📊 HTML Report\n11 Sections"]
+    K --> M
+    L --> M
 ```
 
 1. **Input**: identify requirement type (major feature / tool / MVP / iteration / compliance) + PRD source

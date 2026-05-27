@@ -2,49 +2,69 @@
 
 [中文版](README-zh.md)
 
-> Original dual-track method for competitive research: experience benchmarking + strategic diagnostics. Starts with lightweight findings and a completion checklist, then turns user-supplied details into a full source-traceable HTML report.
+> Your team is copying competitors feature by feature. What you need is structured analysis that tells you what to copy, what to leapfrog, and what to skip.
+
+CPR uses an original **dual-track method** — experience benchmarking (8 UX dimensions) + strategic diagnostics (SWOT, Five Forces, PESTLE) — collects sufficient context via a structured checklist, then produces a **source-traceable professional HTML report** with actionable recommendations.
 
 ## What This Skill Is Optimized For
 
 - Turning competitor observations into **decision-ready actions**
-- Keeping conclusions **traceable to evidence**
+- Keeping conclusions **traceable to evidence** (`SRC-xxx`)
 - Separating **experience gaps** from **strategy choices** to avoid mixed logic
 
-## Method Snapshot
+## Workflow
 
-1. Scope alignment (confirm before run)
-2. Evidence indexing (`SRC-xxx`)
-3. Dual-track analysis
-   - Experience benchmarking (8 dimensions)
-   - Strategic diagnostics (optional: landscape, SWOT, Five Forces, PESTLE)
-4. Tiered output (quick / standard / full HTML / shareable)
-5. Quick output ends with a completion checklist for generating the full report
+```mermaid
+flowchart TD
+    A["🔍 Submit Research Intent"] --> B["📋 Info Collection Checklist"]
+    B --> C{"User Confirms / Skips"}
+    C --> D["🎯 Scope Alignment"]
+    D --> E["📦 Evidence Indexing (SRC-xxx)"]
+    E --> F["⚙️ Dual-Track Analysis"]
 
-## When Inputs Are Incomplete
+    F --> F1["🖥️ Experience Track\n8 UX Dimensions"]
+    F --> F2["📊 Strategy Track\nSWOT · Five Forces · PESTLE"]
 
-- The skill can start with only a research goal and benchmark targets, but must state key assumptions first.
-- Missing current-state or scenario details are treated as open questions, not invented facts.
-- Inaccessible public sources are marked as `SRC-GAP` with a clear follow-up path.
-- Quick output must tell the user what is still needed for the full report.
+    F1 --> G["📄 HTML Report"]
+    F2 --> G
 
-## Output Sections
+    G --> G1["Hero + KPI Strip"]
+    G --> G2["Benchmark Table"]
+    G --> G3["Key Findings"]
+    G --> G4["Implementation Roadmap"]
+    G --> G5["Source Index"]
+```
 
-1. Cover
-2. Executive Summary
-3. Scope & Sources
-4. Benchmark Matrix
-5. Strategic Diagnostics (optional)
-6. Key Findings
-7. Reusable Patterns (optional)
-8. Execution Actions
-9. Source Index
+## Dual-Track Method
+
+| Track | Answers | Dimensions |
+|-------|---------|------------|
+| Experience Benchmarking | "How do they do it? Where's our gap?" | 8 UX dimensions (architecture, interaction, visual, copy, behavior, edge cases, cross-platform, compliance) |
+| Strategic Diagnostics (optional) | "Why does competition look this way? How should we compete?" | Competitive landscape, SWOT, Porter's Five Forces, PESTLE |
+
+## Output Sections (HTML)
+
+| # | Section | Description |
+|---|---------|-------------|
+| 1 | Hero | Research goal, one-line conclusion, verdict pill |
+| 2 | KPI Strip | Products / findings / patterns / action items |
+| 3 | Callouts | Top Insight / Priority Action |
+| 4 | Research Scope + Source Coverage | Scope definition + evidence coverage grid |
+| 5 | Summary Conclusions | 3 key conclusions |
+| 6 | Competitive Benchmark Table | Scenario × Product × Dimension |
+| 7 | Strategic Analysis | SWOT + Five Forces + PESTLE (when enabled) |
+| 8 | Key Findings | Insight / warning / risk level findings |
+| 9 | Reusable Patterns | Cross-product design patterns (optional) |
+| 10 | Implementation Roadmap | Priority + action + impact + complexity + owner |
+| 11 | Source Index | All SRC-xxx evidence cards |
+| 12 | Disclaimer | AI-generated notice |
 
 ## Key Constraints
 
-- No fabricated numbers
-- No unsupported claims
-- No vague action items
-- No heavyweight report by default
+- No fabricated numbers — unverifiable data marked as such
+- No unsupported claims — every conclusion has `SRC-xxx`
+- No vague action items — must have owner, priority, dependencies
+- Always collect information before generating
 - Shareable mode must desensitize sensitive info
 
 ## Quick Start
@@ -57,10 +77,12 @@ Current state: top-right entry + blank editor + no auto-draft.
 
 ## Core Files
 
-- `SKILL.md` — workflow and rules
-- `references/research-playbook.md` — detailed methods
-- `references/report-template.html` — output template
-- `references/factual-reporting-and-style.md` — fact and style constraints
+| File | Role |
+|------|------|
+| `SKILL.md` | Master rules (workflow + output spec + constraints) |
+| `references/research-playbook.md` | Detailed methods (evidence rules, 8-dim checklist, strategy toolkit) |
+| `references/report-template-pro.html` | HTML report template (light-blue hero, 12 sections) |
+| `references/factual-reporting-and-style.md` | Fact-checking and style constraints |
 
 ## Install
 
