@@ -2,7 +2,7 @@
 
 [中文版](README-zh.md)
 
-Your team is copying competitors feature by feature. What you need is structured analysis that tells you what to copy, what to leapfrog, and what to skip.
+Competitive analysis shouldn't be a feature checklist. What you actually need is structured judgment — what to follow, what to leapfrog, and what to ignore.
 
 CPR uses an original **dual-track method** — experience benchmarking (8 UX dimensions) + strategic diagnostics (SWOT, Five Forces, PESTLE) — collects sufficient context via a structured checklist, then produces a **source-traceable professional HTML report** with actionable recommendations.
 
@@ -63,6 +63,6 @@ openclaw skills install competitive-product-research
 
 ---
 
-> Stop copying blindly. Know what to copy, what to leapfrog, and what to skip.
+> Skip the feature checklist. Decide what to follow, what to leapfrog, and what to ignore.
 
 License: MIT
